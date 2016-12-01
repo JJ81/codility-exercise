@@ -70,7 +70,7 @@ checker(100, 1);
 checker(1000, 1);
 checker(10000, 2);
 checker(10000, 2);
-checker(100000, 2);
+checker(100000, 3);
 
 
 
