@@ -21,6 +21,14 @@ function reverseFinal(arr){
 }
 
 function solution(arr, times){
+	if(arr instanceof Array == false) {
+		throw new Error('TypeError is occurred in Array');
+	}
+
+	if(arr.length <= 1){
+		return arr;
+	}
+
 	while(times > 0){
 		arr = reverseFinal(arr);
 		times--;
@@ -35,7 +43,6 @@ function compareArrayElement(arr, arr2){
 
 	for(var i=0,len=arr.length;i<len;i++){
 		if(arr[i] !== arr2[i]){
-			//break;
 			return false;
 		}
 	}	
@@ -49,13 +56,27 @@ function assertion(arr, times, expectation){
 	console.info('result : ' + arr.toString() + ' / expectation : ' + expectation.toString() + ', So it\'s ' + compareArrayElement(result, expectation) );
 }
 
-assertion( [0,1,2,3,4], 1, [4,0,1,2,3] );
-assertion( [0,1,2,3,4], 2, [3,4,0,1,2] );
-assertion( [0,1,2,3,4], 3, [2,3,4,0,1] );
-assertion( [0,1,2,3,4], 4, [1,2,3,4,0] );
-assertion( [0,1,2,3,4], 5, [0,1,2,3,4] );
+//assertion( [0,1,2,3,4], 1, [4,0,1,2,3] );
+//assertion( [0,1,2,3,4], 2, [3,4,0,1,2] );
+//assertion( [0,1,2,3,4], 3, [2,3,4,0,1] );
+//assertion( [0,1,2,3,4], 4, [1,2,3,4,0] );
+//assertion( [0,1,2,3,4], 5, [0,1,2,3,4] );
 
 
+/*
+assertion( [1,2,3,4], 4, [1,2,3,4] );
+assertion( [1,2,3,4], 40, [1,2,3,4] );
+assertion( [1,2,3,4], 400, [1,2,3,4] );
+assertion( [1,2,3,4], 4000, [1,2,3,4] );
+assertion( [1,2,3,4], 40000, [1,2,3,4] );
+assertion( [1,2,3,4], 400000, [1,2,3,4] );
+assertion( [1,2,3,4], 4000000, [1,2,3,4] );
+assertion( [1,2,3,4], 40000000, [1,2,3,4] );
+*/
+
+
+
+assertion( [1], 40000000, [1,2,3,4] );
 
 
 
